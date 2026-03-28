@@ -8,9 +8,9 @@ An AI-powered study assistant that integrates with course materials (PDFs, Power
 
 - Python 3.10+
 - Node.js 18+
-- An [OpenAI](https://platform.openai.com/) API key (for chat, flashcards, MCQ, TTS, DALL-E 3, Whisper)
-- A [Google Gemini](https://aistudio.google.com/) API key (for video script generation)
-- An [ElevenLabs](https://elevenlabs.io/) API key (for voice audio chat and TTS)
+- An [OpenAI](https://platform.openai.com/) API key (for chat, flashcards, MCQ, and quizzes)
+- A [Google Gemini](https://aistudio.google.com/) API key (for all video generation)
+- An [ElevenLabs](https://elevenlabs.io/) API key (for voice input and audio responses)
 
 ## Setup
 
@@ -31,14 +31,14 @@ Open `backend/.env` and fill in your API keys:
 
 | Variable | Description | Default |
 |---|---|---|
-| `OPENAI_API_KEY` | OpenAI API key (chat, flashcards, MCQ, TTS, DALL-E 3, Whisper) | required |
+| `OPENAI_API_KEY` | OpenAI API key (chat, flashcards, MCQ, quizzes) | required |
 | `OPENAI_MODEL` | OpenAI model for chat and generation | `gpt-4o-mini` |
-| `GEMINI_API_KEY` | Google Gemini API key (video script generation) | required |
-| `GEMINI_MODEL` | Gemini model to use | `gemini-2.5-flash` |
-| `VIDEO_SCRIPT_MODEL` | Model used for video script generation | `gemini-2.5-flash` |
+| `GEMINI_API_KEY` | Google Gemini API key (full video generation) | required |
+| `GEMINI_MODEL` | Gemini model for video generation | `gemini-2.5-flash` |
+| `VIDEO_SCRIPT_MODEL` | Gemini model used for video pipeline | `gemini-2.5-flash` |
 | `GEMINI_API_URL` | Gemini API base URL | `https://generativelanguage.googleapis.com` |
-| `ELEVENLABS_API_KEY` | ElevenLabs API key for voice audio chat and TTS | required |
-| `ELEVENLABS_VOICE_ID` | ElevenLabs voice ID for the chat voice | required |
+| `ELEVENLABS_API_KEY` | ElevenLabs API key for voice input and audio responses | required |
+| `ELEVENLABS_VOICE_ID` | ElevenLabs voice ID | required |
 
 ### 3. Set up the backend
 
@@ -77,11 +77,12 @@ The app will be available at `http://localhost:5173`.
 
 ## Features
 
-- **StudyBuddy Chat** — Streaming AI tutor grounded in your lecture materials, with voice input (Whisper) and ElevenLabs-powered voice responses
-- **Flashcards** — Auto-generated Q&A pairs from any lecture file
-- **MCQ Quizzes** — Multiple choice questions with explanations and progress tracking
-- **Learning Maps** — Lectures broken down into structured study chunks
-- **AI Video Summaries** — Full video generation from lecture content: AI-written script, DALL-E 3 images, TTS narration, and MoviePy composition *(local only — see note below)*
+- **StudyBuddy Chat** — Streaming AI tutor grounded in your lecture materials, powered by OpenAI
+- **Voice Chat** — ElevenLabs voice responses and audio input for a fully hands-free study experience
+- **Flashcards** — Auto-generated Q&A pairs from any lecture file via OpenAI
+- **MCQ Quizzes** — Multiple choice questions with explanations and progress tracking via OpenAI
+- **Learning Maps** — Lectures broken down into structured study chunks via OpenAI
+- **AI Video Summaries** — Full video generation powered entirely by Gemini: script, visuals, and narration composed into a complete video *(local only — see note below)*
 - **Assignment Helper** — AI tutor for assignments with guardrails (guides without giving direct answers)
 - **Task Tracker** — AI-generated assignment task breakdown with completion tracking
 - **Multi-language Support** — English and Spanish UI and content translation

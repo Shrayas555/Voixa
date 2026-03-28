@@ -1,6 +1,10 @@
 # Voixa
 
-An AI-powered study assistant that integrates with course materials (PDFs, PowerPoints) to provide flashcards, quizzes, chat tutoring, learning maps, AI-generated video summaries, and assignment help — with multi-language support.
+We were inspired by the need to support diverse student communities, especially Spanish-speaking and bilingual learners who face language barriers in traditional education tools. Most platforms are designed for English-first learning, making it harder for many students to fully understand and engage with their coursework. We wanted to create a system where students can learn and interact in the language they are most comfortable with.
+
+At the same time, learning today is still largely passive. Students scroll through PDFs, slides, and LMS platforms without real interaction, often struggling with complex topics. We realized the issue is not the lack of content, but the lack of accessible and engaging ways to interact with it.
+
+VOIXA brings these ideas together by turning course materials into something students can talk to, watch, and actively learn from, while ensuring language is never a barrier.
 
 **Live demo:** https://voixa.vercel.app/dashboard
 

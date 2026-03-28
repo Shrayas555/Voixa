@@ -2,6 +2,8 @@
 
 An AI-powered study assistant that integrates with course materials (PDFs, PowerPoints) to provide flashcards, quizzes, chat tutoring, learning maps, AI-generated video summaries, and assignment help — with multi-language support.
 
+**Live demo:** https://voixa.vercel.app/dashboard
+
 ## Prerequisites
 
 - Python 3.10+
@@ -79,7 +81,7 @@ The app will be available at `http://localhost:5173`.
 - **Flashcards** — Auto-generated Q&A pairs from any lecture file
 - **MCQ Quizzes** — Multiple choice questions with explanations and progress tracking
 - **Learning Maps** — Lectures broken down into structured study chunks
-- **AI Video Summaries** — Full video generation from lecture content: AI-written script, DALL-E 3 images, TTS narration, and MoviePy composition
+- **AI Video Summaries** — Full video generation from lecture content: AI-written script, DALL-E 3 images, TTS narration, and MoviePy composition *(local only — see note below)*
 - **Assignment Helper** — AI tutor for assignments with guardrails (guides without giving direct answers)
 - **Task Tracker** — AI-generated assignment task breakdown with completion tracking
 - **Multi-language Support** — English and Spanish UI and content translation
@@ -146,3 +148,5 @@ The project includes a `render.yaml` for one-click deployment to [Render](https:
 - Start: `uvicorn app:app --host 0.0.0.0 --port $PORT`
 
 Set all environment variables from `backend/.env` in your Render service's environment settings.
+
+> **Note — Video generation is only available when running locally.** Generating a video requires downloading images, rendering audio, and compositing frames with MoviePy, which is memory-intensive. The deployed backend runs on Render's free tier, which does not have enough memory to handle this workload and will crash under the load. Run the full stack locally if you need video generation.

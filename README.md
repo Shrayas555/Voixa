@@ -12,9 +12,9 @@ VOIXA brings these ideas together by turning course materials into something stu
 
 - Python 3.10+
 - Node.js 18+
-- An [OpenAI](https://platform.openai.com/) API key (for chat, flashcards, MCQ, and quizzes)
 - A [Google Gemini](https://aistudio.google.com/) API key (for all video generation)
 - An [ElevenLabs](https://elevenlabs.io/) API key (for voice input and audio responses)
+- An [OpenAI](https://platform.openai.com/) API key (for chat, flashcards, MCQ, and quizzes)
 
 ## Setup
 
